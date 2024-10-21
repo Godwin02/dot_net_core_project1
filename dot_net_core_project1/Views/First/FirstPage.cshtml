@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+
+        .addForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            padding: 20px;
+            width: 400px;
+            border: 1px thick rgb(0, 7, 197);
+            margin-left: 34%;
+            border-radius: 50px;
+            height: 500px;
+            justify-content: space-between;
+            box-shadow: 1px 2px 100px rgb(0, 21, 255);
+        }
+
+            .addForm .button {
+                width: 110px;
+                height: 40px;
+                border: 3px solid white;
+                border-radius: 10px;
+                background-color: burlywood;
+            }
+
+            .addForm input {
+                background-color: antiquewhite;
+                border-radius: 10px;
+            }
+
+            .addForm h1 {
+                color: antiquewhite;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: rgb(5, 30, 98); position: sticky; width: 100%;">
+        <div class="container-fluid">
+            <a href='/' class="navbar-brand"><img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2018/03/amazon.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">  </a>
+            <form class="d-flex">
+                <div class="nav-link text-warning me-1" style="color:yellow;">@Html.ActionLink("Add Product", "FirstPage", "First")</div>
+                <div class="nav-link  me-1" style="color:yellow;">@Html.ActionLink("Remove Product", "SecondPage", "First")</div>
+                <div class="nav-link  me-1" style="color:yellow;">@Html.ActionLink("View Product", "ThirdPage", "First")</div>
+            </form>
+        </div>
+    </nav>
+   
+        @using (Html.BeginForm("AddProduct", "First"))
+        {
+        <div class="addForm">
+            <h1>Add Product</h1>
+            <input type="text" name="productName" placeholder="Product Name">
+            <input type="text" name="productPrice" placeholder="Product Price">
+            <input type="text" name="productStock" placeholder="Product Stock">
+            <button type="submit" class="button">Add</button>
+        </div>
+
+        }
+       
+</body>
+</html>
