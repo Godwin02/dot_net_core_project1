@@ -1,0 +1,1 @@
+This "dot_net_core_project1" repository contains the CRUD operations using the dot net core web application as the frontend and the dot net core web api as the backend. This repository referencing repository named project3_api. 
